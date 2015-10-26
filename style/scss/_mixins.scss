@@ -1,0 +1,15 @@
+// Media Queries - start
+	$desktop-large: 'all and (min-width: 1200px)';
+	$desktop: 'all and (min-width: 1024px)';
+	$tablet: 'all and (min-width: 768px)';
+	$mobile: 'all and (max-width: 767px)';
+	$small-mobile: 'all and (max-width: 480px)';
+// Media Queries - end
+
+
+// Font Size - start
+@mixin font-size($sizeValue) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+// Font Size - end
