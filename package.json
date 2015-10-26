@@ -1,7 +1,7 @@
 {
-  "name": "project2",
+  "name": "countdown",
   "version": "1.0.0",
-  "description": "class assignment",
+  "description": "javascript class assignment 2",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -21,6 +21,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Nikin",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnagewad/countdown.git"
+  },
+  "author": "Nikin Nagewadia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nnagewad/countdown/issues"
+  },
+  "homepage": "https://github.com/nnagewad/countdown#readme"
 }
