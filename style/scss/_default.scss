@@ -7,6 +7,19 @@ body {
 	margin: 0 auto;
 }
 
-h1 {
+.headline {
 	@include font-size(3.8);
+	text-align: center;
+}
+
+.input,
+.digits,
+.controls {
+	text-align: center;
+}
+
+.start,
+.stop,
+.reset {
+	display: none;
 }
