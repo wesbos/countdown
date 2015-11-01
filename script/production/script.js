@@ -26,20 +26,22 @@ $(function() {
 		$('.start').hide();
 		$('.stop').hide();
 		$('.digits').show();
-		$('.reset').show();
+		$('.reset').hide();
 	}
 
 	function afterCompletion() {
 		$('.input').text('');
 		$('.digits').show();
 		$('.stop').hide();
+		$('.output').hide();
 	}
 	// Controls - end
 
 
 	// Each Digit represents a minute
 	$('.digit').on('click', function() {
-		var inputValue = ($(this).attr("value"))*60;
+		var inputValue = $(this).attr("value");
+		$('.input').show();
 		$('.input').append(inputValue);
 		initialInput();
 	});
@@ -48,14 +50,18 @@ $(function() {
 	// Click start the timer begins
 	$('.start').on('click', function(){
 		startTimer();
+
+		$('.input').hide(); // Hide the input once the countdown starts
 		
+
 		// Extra Insurance to Ensure A Number is Passed
-		var time = parseInt($('.input').text());
+		var time = parseInt($('.input').text()*60);
 
 	
 		// Countdown Timer
 		var countdown = setInterval(function() {
 			$('.input').empty();
+			$('.output').show();
 
 
 			// Formating of the time
@@ -67,8 +73,8 @@ $(function() {
 
 			// Update the span text with the number of seconds
 			time--;
-			console.log(timeFormat);  // Prints the Time in Hours Minutes & Seconds via the Console.
 			$('.input').text( time );  // Prints the Time in Seconds on the DOM.
+			$('.output').text(timeFormat);  // Prints the Time in Hours Minutes & Seconds via the Console.
 			if (time < 0) {
 				clearInterval(countdown);
 				setTimeout(function() {
@@ -87,6 +93,8 @@ $(function() {
 	// Reset Button
 	$('.reset').on('click', function() {
 		$('.input').empty();
+		$('.output').empty();
 		restartState();
+		$('.input').show();
 	});
 });
