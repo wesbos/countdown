@@ -40,7 +40,7 @@ $(function() {
 
 	// Each Digit represents a minute
 	$('.digit').on('click', function() {
-		var inputValue = $(this).attr("value");
+		var inputValue = $(this).data('seconds');
 		$('.input').show();
 		$('.input').append(inputValue);
 		initialInput();
@@ -55,7 +55,7 @@ $(function() {
 		
 
 		// Extra Insurance to Ensure A Number is Passed
-		var time = parseInt($('.input').text()*60);
+		var time = parseInt($('.input').text() * 60);
 
 	
 		// Countdown Timer
