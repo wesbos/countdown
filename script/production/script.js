@@ -1,5 +1,6 @@
 $(function() {
 
+	// Contols - start
 	function initialInput() {
 		$('.start').show();
 		$('.stop').hide();
@@ -33,8 +34,10 @@ $(function() {
 		$('.digits').show();
 		$('.stop').hide();
 	}
+	// Controls - end
 
 
+	// Each Digit represents a minute
 	$('.digit').on('click', function() {
 		var inputValue = ($(this).attr("value"))*60;
 		$('.input').append(inputValue);
@@ -54,15 +57,18 @@ $(function() {
 		var countdown = setInterval(function() {
 			$('.input').empty();
 
+
+			// Formating of the time
 			var hours = Math.floor( time / 3600 ) % 24;
 			var minutes = Math.floor(time / 60) % 60;
 			var seconds = time % 60;
 			var timeFormat = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
 
+
 			// Update the span text with the number of seconds
-			console.log(time);
-			$('.input').text( timeFormat );
 			time--;
+			console.log(timeFormat);  // Prints the Time in Hours Minutes & Seconds via the Console.
+			$('.input').text( time );  // Prints the Time in Seconds on the DOM.
 			if (time < 0) {
 				clearInterval(countdown);
 				setTimeout(function() {
@@ -72,12 +78,11 @@ $(function() {
 				// if the user selects the stop button stop the countdown
 				$('.stop').on('click', function() {
 					clearInterval(countdown);
-					pauseState();
+					return pauseState();
 				});
 			}
 		},1000);
 	});
-
 
 	// Reset Button
 	$('.reset').on('click', function() {
