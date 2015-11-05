@@ -5,17 +5,11 @@ $(function() {
 	var $stop = $('.stop');
 	var $digits = $('.digits');
 	var $reset = $('.reset');
-	// Extra Insurance to Ensure A Number is Passed
-	
+	var $output = $('.output');
 	var time;
 	var numInput;
-
-	// Countdown Timer
 	var countdown;
-
-	var timerStarted = false;
-
-
+	var timerStarted = false;  // The state of the timer hasn't started
 
 	// Contols - start
 	function initialInput() {
@@ -30,12 +24,6 @@ $(function() {
 		$stop.show();
 		$digits.hide();
 		$reset.hide();
-
-
-		console.log('timestart',time);
-	
-		
-
 		countdown = setInterval(function() {
 			// Formating of the time
 			var hours = Math.floor( time / 3600 ) % 24;
@@ -43,7 +31,7 @@ $(function() {
 			var seconds = time % 60;
 			var timeFormat = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);		
 			$input.empty();
-			$('.output').show();
+			$output.show();
 			console.log(timeFormat);
 
 			// Update the span text with the number of seconds
@@ -51,7 +39,7 @@ $(function() {
 
 			$input.text( time );  // Prints the Time in Seconds on the DOM.
 
-			$('.output').text(timeFormat);  // Prints the Time in Hours Minutes & Seconds via the Console.
+			$output.text(timeFormat);  // Prints the Time in Hours Minutes & Seconds via the Console.
 			if (time < 0) {
 				clearInterval(countdown);
 				setTimeout(function() {
@@ -79,7 +67,7 @@ $(function() {
 		$input.text('');
 		$digits.show();
 		$stop.hide();
-		$('.output').hide();
+		$output.hide();
 	}
 	// Controls - end
 
@@ -98,10 +86,10 @@ $(function() {
 		
 		$input.hide(); // Hide the input once the countdown starts
 		
+		// If the timer hasn't started multiply time by 60
 		if (timerStarted === false) {
 			numInput = $input.text();
 			time = parseInt(numInput);
-			console.log(time);
 			time = time * 60;
 			timerStarted = true;
 		}
@@ -113,14 +101,13 @@ $(function() {
 	// if the user selects the stop button stop the countdown
 	$stop.on('click', function() {
 		clearInterval(countdown);
-		console.log('timeend',time);
 		return pauseState();
 	});
 
 	// Reset Button
 	$reset.on('click', function() {
 		$input.empty();
-		$('.output').empty();
+		$output.empty();
 		restartState();
 		$input.show();
 		timerStarted = false;
