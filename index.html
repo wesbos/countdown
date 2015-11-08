@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style/style.min.css">
-	<title>Countdown Timer</title>
-</head>
-<body>
-	<div class="container">
-		<h1 class="headline">Countdown Timer</h1>
-
-		<h2 class="input"></h2>
-		<h2 class="output"></h2>
-
-		<h3 class="minutes">Each Button Represents a Minute</h3>
-		<div class="digits">
-			<button class="digit" data-seconds="1">1</button>
-			<button class="digit" data-seconds="2">2</button>
-			<button class="digit" data-seconds="3">3</button>
-			<button class="digit" data-seconds="4">4</button>
-			<button class="digit" data-seconds="5">5</button>
-			<button class="digit" data-seconds="6">6</button>
-			<button class="digit" data-seconds="7">7</button>
-			<button class="digit" data-seconds="8">8</button>
-			<button class="digit" data-seconds="9">9</button>
-			<button class="digit" data-seconds="0">0</button>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style/style.min.css">
+		<title>Countdown Timer</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="headline">Countdown Timer</h1>
+			<h2 class="info">Each Button Represents a Minute</h2>
+			<div class="input"></div>
+			<div class="output"></div>
+			<div class="digits">
+				<div class="digit" data-seconds="1">1</div>
+				<div class="digit" data-seconds="2">2</div>
+				<div class="digit" data-seconds="3">3</div>
+				<div class="digit" data-seconds="4">4</div>
+				<div class="digit" data-seconds="5">5</div>
+				<div class="digit" data-seconds="6">6</div>
+				<div class="digit" data-seconds="7">7</div>
+				<div class="digit" data-seconds="8">8</div>
+				<div class="digit" data-seconds="9">9</div>
+				<div class="digit" data-seconds="0">0</div>
+			</div>
+			<div class="controls">
+				<div class="start control">start</div>
+				<div class="stop control">stop</div>
+				<div class="reset control">reset</div>
+			</div>
 		</div>
-
-		<div class="controls">
-			<button class="start">start</button>
-			<button class="stop">stop</button>
-			<button class="reset">reset</button>
-		</div>
-	</div> <!-- /.container -->
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src='script/master.min.js'></script>
-</body>
+		<!-- /.container -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src='script/master.min.js'></script>
+	</body>
 </html>

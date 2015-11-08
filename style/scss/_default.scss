@@ -1,27 +1,56 @@
 body {
-	font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 .container {
-	max-width: 1000px;
-	margin: 0 auto;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .headline {
-	@include font-size(3.8);
-	text-align: center;
+    @include font-size(3.8);
+    text-align: center;
 }
 
 .input,
 .output,
 .digits,
 .controls,
-.minutes {
-	text-align: center;
+.info {
+    text-align: center;
+}
+
+.input,
+.output {
+    width: 250px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.input {
+    border: 1px solid blue;
+}
+
+.output {
+    display: none;
+    border: 1px solid red;
+}
+
+.digit,
+.control {
+    border: 1px solid black;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.controls {
+    display: block;
 }
 
 .start,
 .stop,
 .reset {
-	display: none;
+    display: none;
 }
